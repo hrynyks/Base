@@ -1,0 +1,46 @@
+.header {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    z-index: 1;
+
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include a (tablet) {
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+    &__items {
+        display: flex;
+        align-items: center;
+        gap: 40px;
+    }
+
+    &__item {
+        &-link {
+            color: rgba(255, 255, 255, 0.6);
+            border-bottom: 2px solid transparent;
+
+            &:hover {
+                color: $light-color;
+                border-color: $light-color;
+            }
+        }
+    }
+
+    &__btn {
+        font-size: toRem(18);
+        font-weight: 500;
+        color: $main-color;
+        background-color: $light-color;
+        border-radius: 5px;
+        width: 147px;
+        line-height: 53px;
+        text-align: center;
+    }
+}

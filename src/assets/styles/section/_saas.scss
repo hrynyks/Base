@@ -1,0 +1,133 @@
+.saas {
+    padding-bottom: 150px;
+    background-color: #FCFCFC;
+    
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @include a (laptop) {
+            justify-content: center;
+        }
+    }
+
+    &__image {
+        position: relative;
+
+        @include a (laptop) {
+            display: none;
+        }
+    }
+
+    &__img {
+        &-sml {
+            position: absolute;
+            right: -200px;
+            bottom: -120px;
+        }
+
+        &-circle {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: -1;
+        }
+
+        &-wave {
+            position: absolute;
+            right: -20px;
+            top: 50px;
+            z-index: -1;
+        }
+
+        &-arrow {
+            position: absolute;
+            top: 200px;
+            right: 40px;
+        }
+    }
+
+    &__content {
+        max-width: 490px;
+        width: 100%;
+
+        @include a (laptop) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+
+    &__title {
+        &-sml {
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: $main-color;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        font-size: toRem(39);
+        line-height: 135%;
+        font-weight: 600;
+        text-transform: capitalize;
+        color: $dark-color;
+        margin-bottom: 25px;
+
+        @include a (laptop) {
+            text-align: center;
+        }
+
+        &-span {
+            font-weight: 400;
+        }
+    }
+
+    &__descr {
+        line-height: 160%;
+        text-transform: capitalize;
+        color: rgba(1, 7, 13, 0.7);
+        margin-bottom: 45px;
+
+        @include a (laptop) {
+            text-align: center;
+        }
+
+        &-span {
+            font-weight: 600;
+        }
+    }
+
+    &__items {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    &__item {
+        padding-left: 47px;
+        line-height: 160%;
+        text-transform: capitalize;
+        color: rgba($color: $dark-color, $alpha: 0.5);
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        &-1::before {
+            background: url(/src/assets/images/saas-item-1.png);
+        }
+
+        &-2::before {
+            background: url(/src/assets/images/saas-item-2.png);
+        }
+    }
+}
